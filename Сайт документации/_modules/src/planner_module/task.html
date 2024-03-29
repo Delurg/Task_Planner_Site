@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="ru" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>src.planner_module.task &#8212; документация Планировщик задач 0.1</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=12dfc556" />
+    <script src="../../../_static/documentation_options.js?v=490fdf2e"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/translations.js?v=29b1f277"></script>
+    <link rel="index" title="Алфавитный указатель" href="../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Исходный код src.planner_module.task</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="TaskPlanners">
+<a class="viewcode-back" href="../../../src.module.html#src.planner_module.task.TaskPlanners">[документация]</a>
+<span></span><span class="k">class</span> <span class="nc">TaskPlanners</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Инициализация планироващика задач</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
+
+<div class="viewcode-block" id="TaskPlanners.CreateTask">
+<a class="viewcode-back" href="../../../src.module.html#src.planner_module.task.TaskPlanners.CreateTask">[документация]</a>
+  <span class="k">def</span> <span class="nf">CreateTask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Создание задачи</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      task (str): Строка хранящая имя и даты задачи</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      str: Сообщение об успешном создании задачи</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Успешное создание задачи </span><span class="si">{</span><span class="n">task</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+<div class="viewcode-block" id="TaskPlanners.ChangeTask">
+<a class="viewcode-back" href="../../../src.module.html#src.planner_module.task.TaskPlanners.ChangeTask">[документация]</a>
+  <span class="k">def</span> <span class="nf">ChangeTask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">task_change</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Изменение задачи</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      task (str): Строка хранящая старую задачу, которые мы изменяем</span>
+<span class="sd">      task_change (str): Строка хранящая изменения для задачи</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      str: Сообщение об успешном изменении задачи</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task_change</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Успешное изменение задачи </span><span class="si">{</span><span class="n">task_change</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+<div class="viewcode-block" id="TaskPlanners.NotificationTask">
+<a class="viewcode-back" href="../../../src.module.html#src.planner_module.task.TaskPlanners.NotificationTask">[документация]</a>
+  <span class="k">def</span> <span class="nf">NotificationTask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Оповещение о задаче</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      task (str): Строка хранящая задачу, которую мы передаём для упоминания её польщователю</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      str: Сообщение об необходимости выполнить передаваемую задачу</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Внимание необзодимо выполнить задачу </span><span class="si">{</span><span class="n">task</span><span class="si">}</span><span class="s2">!&quot;</span></div>
+
+
+<div class="viewcode-block" id="TaskPlanners.SaveTask">
+<a class="viewcode-back" href="../../../src.module.html#src.planner_module.task.TaskPlanners.SaveTask">[документация]</a>
+  <span class="k">def</span> <span class="nf">SaveTask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Сохранение задачи</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      task (str): Строка хранящая задачу, которую мы передаём для сохранения</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      str: Сообщение об успешном сохранении задачи</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Успешное сохранение задачи </span><span class="si">{</span><span class="n">task</span><span class="si">}</span><span class="s2">&quot;</span></div>
+</div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">Планировщик задач</a></h1>
+
+
+
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">src</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Код модуля</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Коренко В.К..
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
