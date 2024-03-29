@@ -1,0 +1,43 @@
+Submodules
+__________
+
+src.planner\_module.finance module
+____________________________________
+
+.. automodule:: src.planner_module.finance
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.planner\_module.finance\_templates module
+__________________________________________________________
+
+.. automodule:: src.planner_module.finance_templates
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.planner\_module.history module
+___________________________________________
+
+.. automodule:: src.planner_module.history
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.planner\_module.task module
+___________________________________
+
+.. automodule:: src.planner_module.task
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.planner\_module.time module
+______________________________________________
+
+.. automodule:: src.planner_module.time
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
